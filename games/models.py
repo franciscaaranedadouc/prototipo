@@ -9,3 +9,11 @@ class VideoGame(models.Model):
 
     def __str__(self):
         return self.name
+    
+class InicioCategoria(models.Model):
+    nombre = models.CharField(...)
+
+class InicioProducto(models.Model):
+    titulo = models.CharField(...)
+    categoria = models.ForeignKey(InicioCategoria, ...)
+    # ...

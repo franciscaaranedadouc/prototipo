@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('vgames.urls')),  # Tu página principal
     path('', include('juegosgratis.urls')),  # Esto incluye las rutas tal cual: /juegos-gratis/ y /api/juegos-gratis/
     path('', include('games.urls')),
+    path('games/', include('games.urls')),
+
 ]
 
 if settings.DEBUG:

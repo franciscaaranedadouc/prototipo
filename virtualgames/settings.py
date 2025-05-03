@@ -11,15 +11,19 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 import sys
 import oracledb
 import cx_Oracle
+
 sys.modules["cx_Oracle"] = oracledb
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / '.env')
+IGDB_CLIENT_ID     = os.getenv('IGDB_CLIENT_ID')
+IGDB_CLIENT_SECRET = os.getenv('IGDB_CLIENT_SECRET')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -46,7 +50,9 @@ INSTALLED_APPS = [
     'vgamescore',
     'rest_framework',
     'juegosgratis',
-    'games'
+    'games',
+    'api',
+    'Inicio',
 ]
 
 MIDDLEWARE = [
@@ -89,10 +95,6 @@ DATABASES = {
         'PASSWORD': 'oracle',
     }
 }
-
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

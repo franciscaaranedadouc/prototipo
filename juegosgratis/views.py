@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from .models import Juego
 from .serializers import JuegoSerializer
 
+
 # Vista API JSON
 class JuegosGratisView(APIView):
     def get(self, request):

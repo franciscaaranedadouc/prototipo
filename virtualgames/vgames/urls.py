@@ -3,8 +3,10 @@ from django.urls import path, include
 from .views import juegos,registro1,registro2,registrotrabajador,sesion,contraseña,perfil,aventura,accion,carreras,estrategia,terror
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import VideoGameListAPI
 
 urlpatterns = [
+    path('api/videogames/', VideoGameListAPI.as_view(), name='videogame-list'),
     path('admin/', admin.site.urls),
     path('juegos', juegos, name='juegos'),
     path('registro1', registro1, name='registro1'),

@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/fran/Desktop/WEB/SEMANA 5/virtualgames/virtualgames/.venv/bin/python3.12" "$0" "$@"
-' '''
+#!/Users/fran/Documents/GitHub/prototipo/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
